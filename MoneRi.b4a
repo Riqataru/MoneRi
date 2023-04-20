@@ -1,0 +1,107 @@
+﻿Build1=Default,MoneRi.com
+File1=Add Dark.png
+File10=Moneri With Co Logo.png
+File11=Profile Dark.png
+File12=Profile Light.png
+File13=Profile.bal
+File14=ProfileSetup.bal
+File15=ScrollMainHome.bal
+File16=SignUp.bal
+File17=StartUpApp.bal
+File18=SubScrollHome.bal
+File19=Trans Dark.png
+File2=Add Light.png
+File20=Trans Light.png
+File21=Transaction.bal
+File22=User.png
+File3=add-image.png
+File4=AddMoney.bal
+File5=Home Dark.png
+File6=Home Light.png
+File7=Home.bal
+File8=Login.bal
+File9=MoneRi Logo.png
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup12=Default Group
+FileGroup13=Default Group
+FileGroup14=Default Group
+FileGroup15=Default Group
+FileGroup16=Default Group
+FileGroup17=Default Group
+FileGroup18=Default Group
+FileGroup19=Default Group
+FileGroup2=Default Group
+FileGroup20=Default Group
+FileGroup21=Default Group
+FileGroup22=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=bitmapcreator
+Library2=core
+Library3=xui
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="29"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+Module1=AddMoney
+Module2=Home
+Module3=Login
+Module4=Profile
+Module5=ProfileSetup
+Module6=SignUp
+Module7=Starter
+Module8=Transaction
+NumberOfFiles=22
+NumberOfLibraries=3
+NumberOfModules=8
+Version=11.2
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: MoneRi
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: False
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Private xui As XUI
+	Private tmr1 As Timer
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("StartUpApp")
+	tmr1.Initialize("tmr1", 1000)
+	tmr1.Enabled = True
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub tmr1_Tick
+	tmr1.Interval = 250
+	StartActivity(Login)
+	Activity.Finish
+End Sub
